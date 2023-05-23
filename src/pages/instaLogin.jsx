@@ -42,6 +42,7 @@ const InstaLogin = ()=>{
   <link rel="stylesheet" href="assets/css/main.css" />
   <title>Instagram</title>
   <main className="l-main">
+    
     <div className="l-main__img">
       <img src="assets/img/homepage.png" alt="Smartphones" />
     </div>
@@ -61,10 +62,11 @@ const InstaLogin = ()=>{
             onChange={(e)=>setEmail(e.target.value)}
           />
           <input
-            type="text"
+          
             className="c-panel__input"
             placeholder="Password"
             value={password}
+            type={'password'}
             onChange={(e)=>setPassword(e.target.value)}
           />
           <button
