@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import InstaLogin from './pages/instaLogin.jsx';
+import RegistrationPage from './pages/registration';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
   return (
     <>
       <Routes>
-          <Route path="/" element={<InstaLogin/>} />
+          <Route path="/login" element={<InstaLogin/>} />
+          <Route path="/register" element={<RegistrationPage/>} />
         </Routes>
         
     </>

